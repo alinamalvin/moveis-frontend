@@ -15,6 +15,9 @@ class AccountInput extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addAccount(this.state)
+        this.setState({
+            name: ''
+        })
     }
 
     render() {
