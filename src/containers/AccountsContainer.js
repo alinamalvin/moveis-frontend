@@ -13,7 +13,7 @@ class AccountsContainer extends Component {
     render() {
         return (
             <div>
-                 <AccountInput />
+                 <AccountInput/><br></br>
                  <Accounts accounts={this.props.accounts}/>
             </div>
         )
