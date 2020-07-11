@@ -1,4 +1,6 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
+import MoviesContainer from '../containers/MoviesContainer'
 
 const Account  = (props) => {
     console.log(props)
@@ -6,9 +8,12 @@ const Account  = (props) => {
     let account = props.accounts[props.match.params.id - 1]
 
     return (
-        <ul>
+        <div>
+        <h2>
            {account ? account.name : null}
-        </ul>
+        </h2>
+        <MoviesContainer account={account}/>
+        </div>
     )
 }
 
