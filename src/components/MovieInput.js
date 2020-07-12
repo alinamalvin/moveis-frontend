@@ -15,7 +15,7 @@ class MovieInput extends Component {
        })
     }
 
-    handleSubmi = (event) => {
+    handleSubmit = (event) => {
        event.preventDefault() 
        this.props.addMovie(this.state, this.props.account.id)
        this.setState({
@@ -27,7 +27,7 @@ class MovieInput extends Component {
     render() {
         return (
             <div>
-               <form onSubmit={this.handleSubmi}>
+               <form onSubmit={this.handleSubmit}>
                    <label>Movie Name:</label>
                    <input type='text' name='name' value={this.state.name} onChange={this.handleChange}/>
                    <label>Movie Genre:</label>

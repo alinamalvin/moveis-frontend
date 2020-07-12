@@ -4,6 +4,7 @@ import Movies from '../components/Movies'
 import Account from '../components/Account';
 
 class MoviesContainer extends Component {
+
     render() {
         return (
             <div>
