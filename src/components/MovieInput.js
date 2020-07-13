@@ -33,12 +33,12 @@ class MovieInput extends Component {
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    <label><h4>Movie Genre:&nbsp;</h4></label>
                    <select name='kind' value={this.state.kind} onChange={this.handleChange}>
-                       <option>Horror</option>
-                       <option>Comedy</option>
-                       <option>Thriller</option>
-                       <option>Detective</option>
-                       <option>Documentary</option>
-                       <option>Other</option>
+                       <option>horror</option>
+                       <option>comedy</option>
+                       <option>thriller</option>
+                       <option>detective</option>
+                       <option>documentary</option>
+                       <option>other</option>
                    </select>
                    <input type="submit" class="btn btn-outline-success"/>
                </form>
