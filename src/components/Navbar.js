@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-
 const link = {
     width: '100px',
     padding: '12px',
@@ -14,6 +13,7 @@ const link = {
 class Navbar extends React.Component {
     render() {
       return (
+        <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">Movie List</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,7 @@ class Navbar extends React.Component {
     </ul>
   </div>
 </nav>
+      </div>
       )
     }
   }
