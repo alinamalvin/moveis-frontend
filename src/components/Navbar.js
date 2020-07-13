@@ -14,35 +14,25 @@ const link = {
 class Navbar extends React.Component {
     render() {
       return (
-        <div>
-          <NavLink
-            to="/"
-            /* set exact so it knows to only set activeStyle when route is deeply equal to link */
-            exact
-            /* add styling to Navlink */
-            style={link}
-            /* add prop for activeStyle */
-            activeStyle={{
-              background: 'darkblue'
-            }}
-          >Home</NavLink>
-          <NavLink
-            to="/accounts"
-            exact
-            style={link}
-            activeStyle={{
-              background: 'darkblue'
-            }}
-          >My Accounts</NavLink>
-          <NavLink
-            to="/accounts/new"
-            exact
-            style={link}
-            activeStyle={{
-              background: 'darkblue'
-            }}
-          >New List</NavLink>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Movie List</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/accounts">My Lists</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/accounts/new">Create New List</a>
+      </li>
+    </ul>
+  </div>
+</nav>
       )
     }
   }

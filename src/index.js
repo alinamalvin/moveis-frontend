@@ -8,7 +8,9 @@ import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router} from 'react-router-dom'
 import accountReducer from './reducers/accountReducer'
-import Navbar from './components/NavBar'
+import Navbar from './components/Navbar'
+import "bootswatch/dist/superhero/bootstrap.min.css";
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -19,7 +21,6 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Navbar /><br></br>
-      <div>Hi</div>
       <App />
     </Router>
 </Provider>,

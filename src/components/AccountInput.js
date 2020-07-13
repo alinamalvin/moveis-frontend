@@ -26,7 +26,7 @@ class AccountInput extends Component {
                <form onSubmit={this.handleSubmit}>
                    <label>Account Name:</label>
                    <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}></input>
-                   <input type="submit"></input>
+                   <input type="submit" class="btn btn-outline-success" ></input>
                </form>
             </div>
         )

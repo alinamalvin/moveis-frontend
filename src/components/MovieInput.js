@@ -28,18 +28,19 @@ class MovieInput extends Component {
         return (
             <div>
                <form onSubmit={this.handleSubmit}>
-                   <label>Movie Name:</label>
+                   <label><h4>Movie Name:&nbsp;</h4></label>
                    <input type='text' name='name' value={this.state.name} onChange={this.handleChange}/>
-                   <label>Movie Genre:</label>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <label><h4>Movie Genre:&nbsp;</h4></label>
                    <select name='kind' value={this.state.kind} onChange={this.handleChange}>
-                       <option>horror</option>
-                       <option>comedy</option>
-                       <option>thriller</option>
-                       <option>detective</option>
-                       <option>documentary</option>
-                       <option>other</option>
+                       <option>Horror</option>
+                       <option>Comedy</option>
+                       <option>Thriller</option>
+                       <option>Detective</option>
+                       <option>Documentary</option>
+                       <option>Other</option>
                    </select>
-                   <input type='submit'/>
+                   <input type="submit" class="btn btn-outline-success"/>
                </form>
             </div>
         )
