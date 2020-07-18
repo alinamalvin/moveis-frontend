@@ -33,12 +33,19 @@ export const HomeComponent = () => {
 
     const colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#472E32", "#16a085", "#73A857"];
 
+    const imageStyle = {
+      border: 1,
+      borderRadius: 4,
+      padding: 5,
+      width: 300
+    }
+
     return (
       <div>
     <div style={{backgroundColor: colors[randomMaker]}}>
       <h1>"{randomQuote}" {randomAuthor}</h1>
     </div>
-       <img src={randomImage.image}></img>
+       <img src={randomImage.image} style={imageStyle}></img>
        </div>
     )
 }
