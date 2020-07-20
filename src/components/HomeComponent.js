@@ -35,7 +35,7 @@ export const HomeComponent = () => {
 
     const imageStyle = {
       border: 1,
-      borderRadius: 4,
+      borderRadius: 50,
       padding: 5,
       width: 300
     }
