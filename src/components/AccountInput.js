@@ -18,6 +18,7 @@ class AccountInput extends Component {
         this.setState({
             name: ''
         })
+        this.props.history.push('/accounts');
     }
 
     render() {
