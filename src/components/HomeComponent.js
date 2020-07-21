@@ -41,12 +41,10 @@ export const HomeComponent = () => {
     }
 
     return (
-      <div>
-    <div style={{backgroundColor: colors[randomMaker]}}>
-      <h1>"{randomQuote}" {randomAuthor}</h1>
+    <div>
+        <h1><span style={{backgroundColor: colors[randomMaker]}}>"{randomQuote}" {randomAuthor}</span></h1>
+        <img src={randomImage.image} style={imageStyle}></img>
     </div>
-       <img src={randomImage.image} style={imageStyle}></img>
-       </div>
     )
 }
 
