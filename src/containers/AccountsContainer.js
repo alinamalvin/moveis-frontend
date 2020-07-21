@@ -6,13 +6,16 @@ import Accounts from '../components/Accounts'
 import Account from '../components/Account'
 import AccountInput from '../components/AccountInput'
 
+
 class AccountsContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchAccounts()
+        console.log(2)
+         this.props.fetchAccounts()
     }
 
     render() {
+        console.log(3)
         return (
             <div>
                 <Switch>

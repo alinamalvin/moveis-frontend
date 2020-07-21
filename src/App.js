@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 class App extends React.Component {
 
   render() {
+    console.log(1)
     return (
        <div className="App">
           <AccountsContainer />

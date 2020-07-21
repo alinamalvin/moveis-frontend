@@ -1,4 +1,5 @@
 export default function accountReducer(state = {accounts: []}, action) {
+    console.log(12)
     switch (action.type) {
         case 'FETCH_ACCOUNTS':
            return {accounts: action.payload}
