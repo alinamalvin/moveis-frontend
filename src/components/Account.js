@@ -4,6 +4,7 @@ import MoviesContainer from '../containers/MoviesContainer'
 import {connect} from 'react-redux'
 import {deleteAccount} from '../actions/deleteAccount'
 
+
 const Account  = (props) => {
     console.log(props)
 

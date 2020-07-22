@@ -9,7 +9,7 @@ const Accounts = (props) => {
         <div>
            {props.accounts.map(account => 
            <ul key={account.id}>
-               <Link to={`/accounts/${account.id}`}><h3>{account.name}</h3>/></Link><LikeButton />
+               <Link to={`/accounts/${account.id}`}><h3>{account.name}</h3></Link><LikeButton />
             </ul>)}
         </div>
     )
