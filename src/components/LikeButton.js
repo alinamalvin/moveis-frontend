@@ -6,8 +6,19 @@ export default class LikeButton extends Component {
 
 state = {count: 0}
 
+toastStyle = {
+    position: "top-right",
+    autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+}
+
 handleChange = () => {
-  toast("Liked!");
+//   toast.success("");
+  toast.success('🦄 Liked!', this.toastStyle);
   let newLike = this.state.count +1
   this.setState({
       count: newLike
@@ -18,18 +29,7 @@ handleChange = () => {
         return (
             <div>
                <button onClick={this.handleChange} type="button" class="btn btn-outline-secondary">❤️ Likes: {this.state.count}</button>
-               <ToastContainer
-                   position="top-right"
-                   autoClose={5000}
-                   hideProgressBar={false}
-                   newestOnTop={false}
-                   closeOnClick
-                   rtl={false}
-                   pauseOnFocusLoss
-                   draggable
-                   pauseOnHover
-                />
-               <ToastContainer />
+               <ToastContainer/>
             </div>
         )
     }
