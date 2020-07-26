@@ -4,7 +4,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default class LikeButton extends Component {
 
-state = {count: 0}
+state = {
+    count: 0,
+    updated: false
+}
 
 toastStyle = {
     position: "top-right",
@@ -17,13 +20,28 @@ toastStyle = {
 }
 
 handleChange = () => {
-//   toast.success("");
-  toast.success('🦄 Liked!', this.toastStyle);
-  let newLike = this.state.count +1
-  this.setState({
-      count: newLike
-  })
+    if(!this.state.updated) {
+        this.setState((prevState) => {
+            return {
+                count: prevState.count + 1,
+                updated: true
+            };
+        });
+    } else {
+        this.setState((prevState) => {
+            return {
+                count: prevState.count - 1,
+                updated: false
+            };
+        });
+    }
 }
+//   toast.success('🦄 Liked!', this.toastStyle);
+//   let newLike = this.state.count +1
+//   this.setState({
+//       count: newLike
+//   })
+
 
     render() {
         return (
