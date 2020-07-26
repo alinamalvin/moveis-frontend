@@ -1,19 +1,13 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {deleteMovie} from '../actions/deleteMovie'
-import LikeButton from './LikeButton'
+import Movie from './Movie'
 
 
 const  Movies = (props) => {
 
-    const handleDelete = (movie) => {
-        props.deleteMovie(movie.id, movie.account_id)
-    }
-
     return (
         <div>
-            {props.movies && props.movies.map(movie =>
-              <h5>
+            {props.movies && props.movies.map(movie => <Movie movie={movie}/>)}
+              {/* <h5>
                   <div style={{display: 'inline-block', flexDirection: 'column'}}><LikeButton /></div>
               <div style={{display: 'inline-block', flexDirection: 'column'}}>
               <ul key={movie.id} >
@@ -26,10 +20,10 @@ const  Movies = (props) => {
                 </ul>
                </div>
                </h5>            
-            )}
+               */}
             Total: {props.movies && props.movies.length}
         </div>
     )
 }
 
-export default connect(null, {deleteMovie})(Movies)
+export default Movies
