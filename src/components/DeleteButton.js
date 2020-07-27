@@ -12,8 +12,9 @@ class DeleteButton extends Component {
         return (
             <div>
                 <button type="button" 
-                          class="btn btn-outline-danger"
-                          onClick={() => this.handleDelete(this.props.movie)}>
+                        class="btn btn-outline-danger"
+                        style={{border: 0}}
+                        onClick={() => this.handleDelete(this.props.movie)}>
                               Delete
                    </button>
             </div>

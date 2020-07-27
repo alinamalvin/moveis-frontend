@@ -41,7 +41,13 @@ handleChange = () => {
     render() {
         return (
             <div>
-               <button onClick={this.handleChange} type="button" class="btn btn-outline-secondary">{this.state.count} </button>
+               <button 
+               onClick={this.handleChange} 
+               type="button" 
+               class="btn btn-outline-secondary" 
+               style={{border: 0}}>
+                   {this.state.count} 
+                </button>
                <ToastContainer/>
             </div>
         )

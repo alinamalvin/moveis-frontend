@@ -23,7 +23,13 @@ const Account  = (props) => {
            {account ? account.name : null}
         </h2>
         <MoviesContainer account={account}/>
-        <button type="button" class="btn btn-outline-danger" onClick={() => handleDelete(account)}>Delete</button>
+        <button 
+            type="button" 
+            class="btn btn-outline-danger" 
+            style={{border: 0}}
+            onClick={() => handleDelete(account)}>
+                Delete List
+        </button>
         </div>
     )
 }

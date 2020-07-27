@@ -40,7 +40,11 @@ class MovieInput extends Component {
                        <option>documentary</option>
                        <option>other</option>
                    </select>
-                   <input type="submit" class="btn btn-outline-success"/>
+                   <input 
+                        type="submit" 
+                        class="btn btn-outline-success"
+                        style={{border: 0}}
+                    />
                </form>
             </div>
         )
