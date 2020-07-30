@@ -1,4 +1,13 @@
-export default function accountReducer(state = {accounts: []}, action) {
+import { combineReducers } from "redux";
+ 
+const rootReducer = combineReducers({
+  users: userReducer,
+  accounts: accountReducer
+});
+
+export default rootReducer;
+
+function accountReducer(state = {accounts: []}, action) {
     console.log(12)
     switch (action.type) {
         case 'FETCH_ACCOUNTS':
@@ -7,14 +16,6 @@ export default function accountReducer(state = {accounts: []}, action) {
             return {...state, accounts: [...state.accounts, action.payload]}
         case 'DELETE_ACCOUNT':
              return {accounts: [...state.accounts]}
-            //  let accountsThree = state.accounts.map(account =>  {
-            //      if (account.id === action.payload.id) {
-            //          return action.payload 
-            //      } else {
-            //          return account
-            //          }
-            //      })
-            //      return {...state, accounts: accountsThree}
         case 'ADD_MOVIE':
             let accounts = state.accounts.map(account =>  {
                 if (account.id === action.payload.id) {
@@ -37,3 +38,15 @@ export default function accountReducer(state = {accounts: []}, action) {
             return state 
     }
 }
+  
+function userReducer(state = {currentUser: []}, action) {
+    switch (action.type) {
+        case 'LOGIN_USER':
+           return {...state, currentUser: action.payload}
+        default:
+           return state;
+    }
+}
+
+
+

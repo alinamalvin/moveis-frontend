@@ -9,8 +9,8 @@ export const userPostFetch = user => {
         body: JSON.stringify({user})
       })
         .then(resp => resp.json())
-        .then(user => {
-            dispatch({type: 'ADD_USER', payload: user})
+        .then(userObj => {
+            dispatch({type: 'LOGIN_USER', payload: userObj})
         })
     }
   }
