@@ -9,9 +9,14 @@ export const userPostFetch = user => {
         body: JSON.stringify({user})
       })
         .then(resp => resp.json())
-        .then(userObj => {
-            dispatch({type: 'LOGIN_USER', payload: userObj})
+        .then(data => {
+          localStorage.setItem("token", data.token)
+          dispatch(loginUser(data.user))
         })
     }
   }
   
+  const loginUser = userObj => ({
+    type: 'LOGIN_USER',
+    payload: userObj
+})

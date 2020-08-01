@@ -4,22 +4,29 @@ import {connect} from 'react-redux'
 import AccountsContainer from './containers/AccountsContainer'
 import {HomeComponent} from './components/HomeComponent'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Signup from './components/Signup'
-import Login from './components/Login'
+import {getProfileFetch} from './actions/getProfileFetch'
+import {UserAuthentificationContainer} from './containers/UserAuthentificationContainer'
 
 class App extends React.Component {
+
+  componentDidMount = () => {
+    this.props.getProfileFetch()
+  }
 
   render() {
     console.log(1)
     return (
        <div className="App">
           <AccountsContainer />
-          <Signup />
-          <Login />
+          <UserAuthentificationContainer />
           <Route exact path="/" component={HomeComponent} />
        </div>
     );
   }
 }
 
-export default connect()(App);
+const mapDispatchToProps = dispatch => ({
+  getProfileFetch: () => dispatch(getProfileFetch())
+})
+
+export default connect(null, mapDispatchToProps)(App);

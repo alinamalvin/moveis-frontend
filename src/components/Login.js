@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {userLoginFetch} from '../actions/userLoginFetch';
 
@@ -20,6 +21,9 @@ class Login extends Component {
   }
 
   render() {
+    // if (localStorage.token) {
+    //   return <Redirect to="/accounts" />
+    // }
     return (
       <form onSubmit={this.handleSubmit}>
         <h1>Login</h1>
