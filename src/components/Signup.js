@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import {userPostFetch} from '../actions/userPostFetch';
 
 class Signup extends Component {
@@ -20,6 +21,9 @@ class Signup extends Component {
   }
 
   render() {
+    if (localStorage.token) {
+      return <Redirect to="/accounts" />
+    }
     return (
       <form onSubmit={this.handleSubmit}>
         <h1>Sign Up For An Account</h1>

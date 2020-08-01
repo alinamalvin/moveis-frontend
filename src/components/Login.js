@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {userLoginFetch} from '../actions/userLoginFetch';
 
+
 class Login extends Component {
   state = {
     name: "",
@@ -18,12 +19,13 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.userLoginFetch(this.state)
+    this.props.history.push('/accounts');
   }
 
   render() {
-    // if (localStorage.token) {
-    //   return <Redirect to="/accounts" />
-    // }
+    if (localStorage.token) {
+      return <Redirect to="/accounts" />
+    }
     return (
       <form onSubmit={this.handleSubmit}>
         <h1>Login</h1>
