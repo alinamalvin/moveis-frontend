@@ -7,7 +7,7 @@ import {userLoginFetch} from '../actions/userLoginFetch';
 class Login extends Component {
   state = {
     name: "",
-    password: ""
+    password: "",
   }
 
   handleChange = event => {
@@ -19,6 +19,7 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.userLoginFetch(this.state)
+    localStorage.setItem('name', this.state.name)
     this.props.history.push('/accounts');
   }
 
@@ -51,7 +52,7 @@ class Login extends Component {
       </form>
     )
   }
-}
+} 
 
 const mapDispatchToProps = dispatch => ({
   userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo))

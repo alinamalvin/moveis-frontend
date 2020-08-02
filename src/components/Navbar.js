@@ -25,7 +25,7 @@ class Navbar extends React.Component {
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/accounts">My Lists</a>
+        <a class="nav-link" href="/accounts">{localStorage.token ? localStorage.name +'s': "My"} Lists</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/accounts/new">Create New List</a>

@@ -8,7 +8,7 @@ class AccountInput extends Component {
 
     handleChange = (event) => {
        this.setState({
-           [event.target.name]: event.target.value 
+           [event.target.name]: event.target.value ,
        })
     }
 
@@ -39,4 +39,10 @@ class AccountInput extends Component {
     }
 }
 
-export default connect(null, {addAccount}) (AccountInput)
+const  mapStateToProps = state => {
+    return {
+        currentUser: state.name
+    }
+}  
+
+export default connect(mapStateToProps, {addAccount}) (AccountInput)
