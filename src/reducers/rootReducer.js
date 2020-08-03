@@ -8,7 +8,6 @@ const rootReducer = combineReducers({
 export default rootReducer;
 
 function accountReducer(state = {accounts: []}, action) {
-    console.log(12)
     switch (action.type) {
         case 'FETCH_ACCOUNTS':
            return {accounts: action.payload}
@@ -42,7 +41,7 @@ function accountReducer(state = {accounts: []}, action) {
 function userReducer(state = {currentUser: []}, action) {
     switch (action.type) {
         case 'LOGIN_USER':
-           return {...state, currentUser: action.payload}
+           return {currentUser: action.payload}
         case 'LOGOUT_USER':
             return {...state, currentUser: {} }
         default:

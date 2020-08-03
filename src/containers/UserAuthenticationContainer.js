@@ -5,6 +5,7 @@ import Signup from '../components/Signup'
 import Login from '../components/Login'
 import {logoutUser} from '../actions/logoutUser'
 
+
 export class UserAuthenticationContainer extends React.Component {
 
     handleClick = event => {
@@ -12,7 +13,6 @@ export class UserAuthenticationContainer extends React.Component {
         // Remove the token from localStorage
         // localStorage.removeItem('token','name')
         localStorage.clear()
-        console.log('this.props.logoutUser', this.props.logoutUser);
         // Remove the user object from the Redux store
         this.props.logoutUser()
         this.props.history.push('/');
@@ -31,7 +31,7 @@ export class UserAuthenticationContainer extends React.Component {
                 {localStorage.token ? <button onClick={this.handleClick}>Log Out</button>: null}
             </div>
            <Switch>
-                <Route path='/login' component={Login}/>
+                <Route path='/login' render={(routerProps) => <Login {...routerProps} currentUser={this.props.currentUser}/>} />
                 <Route path='/signup' component={Signup}/>
             </Switch>
         </div>
@@ -39,15 +39,10 @@ export class UserAuthenticationContainer extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-    currentUser: state.currentUser
-  }
-}
   
   const mapDispatchToProps = dispatch => ({
-    logoutUser: () => dispatch(logoutUser())
+    logoutUser: () => dispatch(logoutUser()),
   })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserAuthenticationContainer)); 
+export default withRouter(connect(null, mapDispatchToProps)(UserAuthenticationContainer)); 
 

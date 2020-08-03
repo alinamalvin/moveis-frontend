@@ -11,7 +11,8 @@ export const userLoginFetch = user => {
       })
       .then(resp => resp.json())
       .then(data => {
-        localStorage.setItem("token", data.token)
+        localStorage.setItem("token", data.jwt)
+        localStorage.setItem("user_id", data.user.id)
         dispatch(loginUser(data.user))
       })
   }

@@ -14,19 +14,15 @@ class AccountInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(4)
         this.props.addAccount(this.state)
-        console.log(5)
         this.setState({
             name: ''
         })
 
         this.props.history.push('/accounts');
-        console.log(6)
     }
 
     render() {
-        console.log(7)
         return (
             <div>
                <form onSubmit={this.handleSubmit}>
@@ -41,7 +37,7 @@ class AccountInput extends Component {
 
 const  mapStateToProps = state => {
     return {
-        currentUser: state.name
+        currentUser: state.users.currentUser
     }
 }  
 
