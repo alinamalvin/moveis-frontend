@@ -1,24 +1,24 @@
-export const getProfileFetch = () => {
+export const getProfileFetch = (current_user_id) => {
   return dispatch => {
     const token = localStorage.token;
     if (token) {
       return fetch("http://localhost:3000/profile", {
         method: "GET",
+        mode: 'cors',
+        cache: 'no-cache',
+        redirect: 'follow',
+        referrer: 'no-referrer',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
           'Authorization': `Bearer ${token}`
         }
       })
+        // here the execution stops because fetch request is not completed
         .then(resp => resp.json())
         .then(data => {
-          if (data.message) {
-            // An error will occur if the token is invalid.
-            // If this happens, you may want to remove the invalid token.
-            localStorage.removeItem("token")
-          } else {
             dispatch(loginUser(data.user))
-          }
         })
     }
   }

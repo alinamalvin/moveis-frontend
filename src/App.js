@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 class App extends React.Component {
 
   componentDidMount = () => {
-    this.props.getProfileFetch()
+    this.props.getProfileFetch(current_user_id)
   }
 
   render() {
@@ -26,8 +26,10 @@ class App extends React.Component {
   }
 }
 
+const current_user_id= localStorage.user_id 
+
 const mapDispatchToProps = dispatch => ({
-  getProfileFetch: () => dispatch(getProfileFetch())
+  getProfileFetch: (current_user_id) => dispatch(getProfileFetch(current_user_id))
 })
 
 export default connect(null, mapDispatchToProps)(App); 

@@ -2,12 +2,17 @@ export const userLoginFetch = user => {
     return dispatch => {
     // fetching sessions#create
       return fetch("http://localhost:3000/login", {
-        method: "POST",
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-        body: JSON.stringify({user})
+        method: "POST",
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'include',
+        redirect: 'follow',
+        referrer: 'no-referrer',
+        body: JSON.stringify({user}),
       })
       .then(resp => resp.json())
       .then(data => {
